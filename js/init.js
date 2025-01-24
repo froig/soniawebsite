@@ -311,18 +311,18 @@ function tokyo_tm_preloader(){
 	
 	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
 	var preloader = $('#preloader');
-	
-	if (!isMobile) {
-		setTimeout(function() {
-			preloader.addClass('preloaded');
-		}, 800);
-		setTimeout(function() {
-			preloader.remove();
-		}, 2000);
+	preloader.remove();
+	// if (!isMobile) {
+	// 	setTimeout(function() {
+	// 		preloader.addClass('preloaded');
+	// 	}, 800);
+	// 	setTimeout(function() {
+	// 		preloader.remove();
+	// 	}, 2000);
 
-	} else {
-		preloader.remove();
-	}
+	// } else {
+	// 	preloader.remove();
+	// }
 }
 
 // -----------------------------------------------------
@@ -332,9 +332,9 @@ function tokyo_tm_preloader(){
 function tokyo_tm_my_load(){
 	
 	"use strict";
-	
-	var speed	= 500;
-	setTimeout(function(){tokyo_tm_preloader();},speed);
+	tokyo_tm_preloader()
+	// var speed	= 0;
+	// setTimeout(function(){tokyo_tm_preloader();},speed);
 }
 
 // -----------------------------------------------------

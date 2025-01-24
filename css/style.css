@@ -73,12 +73,13 @@ img.svg{
 }
 
 .container{
-	max-width: 1070px;
+	/* max-width: 1070px; */
 	width:100%;
 	margin-left: auto;
 	margin-right: auto;
 	height:auto;
-	padding:0px 40px;
+	/* padding:0px 40px; */
+	padding:0px 0px;
 	position:relative;
 	clear:both;
 }
@@ -421,7 +422,8 @@ a{
 	min-height: 100vh;
 	float: left;
 	position: relative;
-	background-color: #f8f8f8;
+	/* background-color: #fae4fb; */
+	background-color: inherit;
 	padding-left: 450px;
 }
 .tokyo_tm_all_wrap .rightpart_in{
@@ -480,6 +482,8 @@ a{
 	align-items: center;
 	justify-content: center;
 	position: relative;
+	background-color: #fff6ff;
+	/* background-color: #fae4fb; */
 }
 .tokyo_tm_home .home_content{
 	display: flex;
@@ -534,12 +538,15 @@ a{
 	font-weight: 800;
 	text-transform: uppercase;
 	margin-bottom: 14px;
+	color: #c179dd;
 }
 .tokyo_tm_home .details .job{
 	font-family: "Montserrat";
+	/* font-size: 24px; */
 	font-weight: 500;
 	max-width: 450px;
 	margin-bottom: 25px;
+ 	color: #787878;
 }
 .tokyo_tm_home .social{
 	width: 100%;
@@ -579,7 +586,8 @@ a{
 	height: auto;
 	clear: both;
 	float: left;
-	padding: 100px 0px 100px 0px;
+	padding: 100px 100px 100px 100px;
+	background-color: #fcebe4;
 }
 
 .tokyo_tm_button{
@@ -602,6 +610,7 @@ a{
 }
 .tokyo_tm_about .top_author_image{
 	width: 100%;
+	max-width: 800px;
 	height: auto;
 	clear: both;
 	float: left;
@@ -609,7 +618,7 @@ a{
 	margin-bottom: 35px;
 }
 .tokyo_tm_about .top_author_image img{
-	min-width: 100%;
+	min-width: 75%;
 }
 .tokyo_tm_about .about_title{
 	width: 100%;
@@ -630,8 +639,12 @@ a{
 	clear: both;
 	float: left;
 	border-bottom: 1px solid #DFDFDF;
-	padding-bottom: 31px;
+	padding: 30px 30px 30px 30px;
 	margin-bottom: 30px;
+	text-align: justify;
+	background-color: rgba(200, 200, 200,  0.2);
+
+
 }
 .tokyo_tm_about .about_text p{
    	margin-bottom: 11px;
@@ -1032,10 +1045,17 @@ a{
 
 .tokyo_tm_services{
 	width: 100%;
-    height: auto;
-    clear: both;
+	height: 100%;
+	clear: both;
     float: left;
-    padding: 100px 0px 100px 0px;
+	padding: 100px 100px 100px 100px;
+	background-color: #eff6fc;
+}
+
+.tokyo_tm_services h1 {
+	color: #ea8f9c;
+	font-weight: 800;
+	font-family: "Montserrat";
 }
 .tokyo_tm_services .list{
 	width: 100%;
@@ -1063,7 +1083,6 @@ a{
 	border: 1px solid rgba(0,0,0,.1);
     background-color: #fff;
     padding: 45px 30px 40px 30px;
-	
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -1127,235 +1146,6 @@ a{
 	display: none;
 	position: absolute;
 	z-index: -111;
-}
-.tokyo_tm_modalbox .service_popup_informations{
-	width: 100%;
-	height: auto;
-	clear: both;
-	float: left;
-}
-.tokyo_tm_modalbox .service_popup_informations .image{
-	width: 100%;
-	float: left;
-	position: relative;
-	margin-bottom: 37px;
-}
-.tokyo_tm_modalbox .service_popup_informations .image img{
-	position: relative;
-	min-width: 100%;
-	opacity: 0;
-}
-.tokyo_tm_modalbox .service_popup_informations .image .main{
-	position: absolute;
-	top: 0px;
-	bottom: 0px;
-	left: 0px;
-	right: 0px;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-}
-.tokyo_tm_modalbox .service_popup_informations .main_title{
-	width: 100%;
-	float: left;
-	margin-bottom: 23px;
-}
-.tokyo_tm_modalbox .service_popup_informations .main_title h3{
-	font-size: 23px;
-	font-weight: 600;
-}
-.tokyo_tm_modalbox .service_popup_informations .descriptions{
-	width: 100%;
-	float: left;
-}
-.tokyo_tm_modalbox .service_popup_informations .descriptions p{
-	margin-bottom: 15px;
-}
-.tokyo_tm_modalbox .service_popup_informations .descriptions p:last-child{
-	margin-bottom: 0px;
-}
-.tokyo_tm_partners{
-	width: 100%;
-	height: auto;
-	clear: both;
-	float: left;
-	background-color: #fff;
-	padding: 100px 0px;
-}
-.tokyo_tm_partners .partners_inner{
-	width: 100%;
-    float: left;
-    clear: both;
-    overflow: hidden;
-    border: 2px solid #eee;
-}
-.tokyo_tm_partners ul{
-	margin: -2px -10px -2px -2px;
-    list-style-type: none;
-    padding-top: 2px;
-    float: left;
-    padding-left: 2px;
-    min-width: calc(100% + 12px);
-} 
-.tokyo_tm_partners ul li{
-	margin: 0px;
-    float: left;
-    width: 25%;
-    border: 2px solid #eee;
-    text-align: center;
-    height: 145px;
-    line-height: 145px;
-    position: relative;
-    margin-top: -2px;
-    margin-left: -2px;
-    overflow: hidden;
-} 
-.tokyo_tm_partners ul li img{
-	max-width: 50%;
-    max-height: 100px;
-} 
-.tokyo_tm_partners ul li .list_inner{
-	width: 100%;
-	height: auto;
-	clear: both;
-	float: left;
-	opacity: .5;
-	
-	-webkit-transition: all .3s ease;
-	   -moz-transition: all .3s ease;
-	    -ms-transition: all .3s ease;
-	     -o-transition: all .3s ease;
-	        transition: all .3s ease;
-}
-.tokyo_tm_partners ul li .list_inner:hover{
-	opacity: 1;
-}
-.tokyo_tm_pricing{
-	width: 100%;
-	height: auto;
-	clear: both;
-	float: left;
-	padding: 100px 0px 60px 0px;
-	background-color: #fff;
-}
-.tokyo_tm_pricing .tokyo_tm_button a{
-	padding: 6px 40px 11px 40px;
-}
-.tokyo_tm_pricing .list{
-	width: 100%;
-	height: auto;
-	clear: both;
-	float: left;
-}
-.tokyo_tm_pricing .list > ul{
-	margin: 0px 0px 0px -40px;
-	list-style-type: none;
-}
-.tokyo_tm_pricing .list > ul > li{
-	margin: 0px 0px 40px 0px;
-	padding-left: 40px;
-	width: 33.3333%;
-	float: left;
-}
-.tokyo_tm_pricing .list > ul > li .list_inner{
-	width: 100%;
-    height: auto;
-    clear: both;
-    float: left;
-    position: relative;
-    border: 1px solid rgba(0,0,0,.1);
-	padding: 27px 40px 45px;
-}
-.tokyo_tm_pricing .price{
-	width: 100%;
-	float: left;
-}
-.tokyo_tm_pricing .price h3{
-	font-size: 40px;
-    font-weight: 600;
-}
-.tokyo_tm_pricing .price span{
-	position: relative;
-    display: inline-block;
-}
-.tokyo_tm_pricing .price .currency{
-	position: absolute!important;
-    bottom: 10px;
-    right: -10px;
-    font-size: 15px;
-}
-.tokyo_tm_pricing .plan{
-	width: 100%;
-	float: left;
-}
-.tokyo_tm_pricing .plan h3{
-	font-weight: 600;
-	font-size: 20px;
-	border-bottom: 1px solid rgba(0,0,0,.1);
-	margin-bottom: 20px;
-	padding-bottom: 20px;
-}
-.tokyo_tm_pricing .item{
-	margin: 0px;
-	list-style-type: none;
-}
-.tokyo_tm_pricing .item li{
-	margin: 0px;
-	opacity: .5;
-}
-.tokyo_tm_pricing .item li.active{
-	opacity: 1;
-}
-.tokyo_tm_pricing .tokyo_tm_button{
-	margin-top: 30px;
-}
-.tokyo_tm_pricing .popular{
-	position: absolute;
-    display: inline-block;
-    background-color: #000;
-    color: #fff;
-    font-size: 13px;
-    padding: 0 20px 3px;
-    top: -17px;
-    right: 10px;
-}
-.tokyo_tm_facts{
-	width: 100%;
-	height: auto;
-	clear: both;
-	float: left;
-	padding: 100px 0px 60px 0px;
-}
-.tokyo_tm_facts .list{
-	width: 100%;
-	height: auto;
-	clear: both;
-	float: left;
-}
-.tokyo_tm_facts .list ul{
-	margin: 0px 0px 0px -40px;
-	list-style-type: none;
-}
-.tokyo_tm_facts .list ul li{
-	margin: 0px 0px 40px 0px;
-	padding-left: 40px;
-	width: 33.333%;
-	float: left;
-}
-.tokyo_tm_facts .list ul li .list_inner{
-	width: 100%;
-	height: auto;
-	clear: both;
-	float: left;
-	position: relative;
-	border: 1px solid rgba(0,0,0,.1);
-	text-align: center;
-    padding: 40px 20px;
-}
-.tokyo_tm_facts .list h3{
-	font-weight: 600;
-	font-size: 20px;
-	margin-bottom: 3px;
 }
 
 /*---------------------------------------------------*/
@@ -2163,8 +1953,15 @@ body.modal{
 	height: auto;
 	clear: both;
 	float: left;
-	padding: 100px 0px 100px 0px;
+	padding: 100px 100px 100px 100px;
+	background-color: #fff6ff;
 }
+
+.tokyo_tm_contact .contact_text {
+	/* background-color: rgba(255, 255, 255,  0.7); */
+	padding-top: 30px;
+}
+
 .tokyo_tm_contact .map_wrap{
 	width: 100%;
 	height: auto;
@@ -2177,6 +1974,7 @@ body.modal{
 	height: auto;
 	clear: both;
 	float: left;
+	margin-top: -20px;
 }
 .tokyo_tm_contact .fields .first{
 	width: 100%;
@@ -2188,13 +1986,13 @@ body.modal{
 }
 .tokyo_tm_contact .fields ul li{
 	width: 100%;
-	margin: 0px 0px 30px 0px;
+	margin: 0px 0px 20px 0px;
 	float: left;
 }
 .tokyo_tm_contact .fields ul li input{
 	width: 100%;
 	border: 1px solid rgba(0,0,0,.2);
-	background-color: transparent;
+	background-color: white;
 }
 .tokyo_tm_contact .fields ul li input:focus{
 	outline: none;
@@ -2206,7 +2004,7 @@ body.modal{
 	height: 120px;
 	resize: none;
 	margin-bottom: 20px;
-	background-color: transparent;
+	background-color: white;
 }
 .tokyo_tm_contact .fields .last textarea:focus{
 	outline: none;
@@ -2286,7 +2084,9 @@ body.modal{
 /*---------------------------------------------------*/
 
 @media (max-width: 1600px) {
-	.container{max-width: 968px;}
+	/* .container{max-width: 968px;} */
+	.container{width: 100%;}
+	/* .container{margin-left: 40px;} */
 	.tokyo_tm_all_wrap .leftpart{width: 400px;}
 	.tokyo_tm_all_wrap .rightpart{padding-left: 350px;}
 	.tokyo_tm_all_wrap .leftpart{width: 350px;padding: 0px 70px;}
@@ -2294,8 +2094,11 @@ body.modal{
 	.tokyo_tm_home .details .name{font-size: 48px;margin-bottom: 10px;}
 	.tokyo_tm_home .details .job{margin-bottom: 22px;}
 	.tokyo_tm_modalbox .box_inner{width: 850px;}
+	/* .tokyo_tm_about{padding-left: 130px;} */
+
 }
 @media (max-width: 1200px) {
+	.container{width: 100%;}
 	.tokyo_tm_topbar{display: block;}
 	.tokyo_tm_section{padding-left: 0px;}
 	.tokyo_tm_all_wrap .leftpart{display: none;}
@@ -2323,7 +2126,7 @@ body.modal{
 	.tokyo_tm_home .details{margin-left: 0px;}
 	.tokyo_tm_title .title_flex{flex-direction: column;align-items: flex-start;}
 	.tokyo_tm_title .portfolio_filter{padding-top: 48px;}
-	.container{padding: 0px 20px;}
+	.container{padding: 0px 0px;}
 	.tokyo_tm_services .list ul li{width: 50%;}
 	.tokyo_tm_partners ul li{width: 33.3333%;}
 	.tokyo_tm_modalbox .details .title{font-size: 20px;}

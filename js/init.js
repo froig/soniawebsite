@@ -457,46 +457,130 @@ function tokyo_tm_data_images(){
 // ----------------    CONTACT FORM    -----------------
 // -----------------------------------------------------
 
-function tokyo_tm_contact_form(){
+
+// DEPRECATED ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// function tokyo_tm_contact_form(){
 	
-	"use strict";
+// 	"use strict";
 	
-	jQuery(".contact_form #send_message").on('click', function(){
+// 	jQuery(".contact_form #send_message").on('click', function(){
 		
-		var name 		= jQuery(".contact_form #name").val();
-		var email 		= jQuery(".contact_form #email").val();
-		var message 	= jQuery(".contact_form #message").val();
-		var subject 	= jQuery(".contact_form #subject").val();
-		var success     = jQuery(".contact_form .returnmessage").data('success');
+// 		var name 		= jQuery(".contact_form #name").val();
+// 		var email 		= jQuery(".contact_form #email").val();
+// 		var message 	= jQuery(".contact_form #message").val();
+// 		var subject 	= jQuery(".contact_form #subject").val();
+// 		var success     = jQuery(".contact_form .returnmessage").data('success');
 	
-		jQuery(".contact_form .returnmessage").empty(); //To empty previous error/success message.
-		//checking for blank fields	
-		if(name===''||email===''||message===''){
+// 		jQuery(".contact_form .returnmessage").empty(); //To empty previous error/success message.
+// 		//checking for blank fields	
+// 		if(name===''||email===''||message===''){
 			
-			jQuery('div.empty_notice').slideDown(500).delay(2000).slideUp(500);
-		}
-		else{
-			// Returns successful data submission message when the entered information is stored in database.
-			jQuery.post("modal/contact.php",{ ajax_name: name, ajax_email: email, ajax_message:message, ajax_subject: subject}, function(data) {
+// 			jQuery('div.empty_notice').slideDown(500).delay(2000).slideUp(500);
+// 		}
+// 		else{
+// 			// Returns successful data submission message when the entered information is stored in database.
+// 			jQuery.post("modal/contact.php",{ ajax_name: name, ajax_email: email, ajax_message:message, ajax_subject: subject}, function(data) {
 				
-				jQuery(".contact_form .returnmessage").append(data);//Append returned message to message paragraph
+// 				jQuery(".contact_form .returnmessage").append(data);//Append returned message to message paragraph
 				
 				
-				if(jQuery(".contact_form .returnmessage span.contact_error").length){
-					jQuery(".contact_form .returnmessage").slideDown(500).delay(2000).slideUp(500);		
-				}else{
-					jQuery(".contact_form .returnmessage").append("<span class='contact_success'>"+ success +"</span>");
-					jQuery(".contact_form .returnmessage").slideDown(500).delay(4000).slideUp(500);
-				}
+// 				if(jQuery(".contact_form .returnmessage span.contact_error").length){
+// 					jQuery(".contact_form .returnmessage").slideDown(500).delay(2000).slideUp(500);		
+// 				}else{
+// 					jQuery(".contact_form .returnmessage").append("<span class='contact_success'>"+ success +"</span>");
+// 					jQuery(".contact_form .returnmessage").slideDown(500).delay(4000).slideUp(500);
+// 				}
 				
-				if(data===""){
-					jQuery("#contact_form")[0].reset();//To reset form fields on success
-				}
+// 				if(data===""){
+// 					jQuery("#contact_form")[0].reset();//To reset form fields on success
+// 				}
 				
-			});
-		}
-		return false; 
-	});
+// 			});
+// 		}
+// 		return false; 
+// 	});
+// }
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function tokyo_tm_contact_form() {
+    "use strict";
+
+    jQuery(".contact_form #send_message").on("click", function (e) {
+        e.preventDefault(); // Prevent form's default submission behavior
+
+        const name = jQuery(".contact_form #name").val().trim();
+        const email = jQuery(".contact_form #email").val().trim();
+        const message = jQuery(".contact_form #message").val().trim();
+        const subject = jQuery(".contact_form #subject").val().trim();
+        const successMessage = jQuery(".contact_form .returnmessage").data("success");
+
+        jQuery(".contact_form .returnmessage").empty(); // Clear previous messages
+
+        // Validate form fields
+        if (!name || !email || !message) {
+            jQuery("div.empty_notice")
+                .slideDown(500)
+                .delay(2000)
+                .slideUp(500);
+            return false;
+        }
+
+        // Validate email format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            jQuery(".contact_form .returnmessage")
+                .append("<span class='contact_error'>Invalid email address</span>")
+                .slideDown(500)
+                .delay(2000)
+                .slideUp(500);
+            return false;
+        }
+
+        // Make AJAX POST request
+        jQuery
+            .post(
+                "modal/contact.php", // Adjust the path if needed
+                {
+                    ajax_name: name,
+                    ajax_email: email,
+                    ajax_message: message,
+                    ajax_subject: subject, // Pass subject to the server
+                }
+            )
+            .done(function (data) {
+                // Append server response to the return message container
+                jQuery(".contact_form .returnmessage").append(data);
+
+                // Handle server response
+                if (jQuery(".contact_form .returnmessage span.contact_error").length) {
+                    jQuery(".contact_form .returnmessage")
+                        .slideDown(500)
+                        .delay(2000)
+                        .slideUp(500);
+                } else {
+                    jQuery(".contact_form .returnmessage").append(
+                        `<span class='contact_success'>${successMessage}</span>`
+                    );
+                    jQuery(".contact_form .returnmessage")
+                        .slideDown(500)
+                        .delay(4000)
+                        .slideUp(500);
+                    jQuery(".contact_form")[0].reset(); // Reset form fields on success
+                }
+            })
+            .fail(function () {
+                // Handle AJAX failure
+                jQuery(".contact_form .returnmessage")
+                    .append("<span class='contact_error'>Failed to send the message. Please try again later.</span>")
+                    .slideDown(500)
+                    .delay(4000)
+                    .slideUp(500);
+            });
+
+        return false; // Prevent default behavior
+    });
 }
 
 // -----------------------------------------------------

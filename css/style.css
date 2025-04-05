@@ -476,6 +476,7 @@ a{
 
 .tokyo_tm_home{
 	width: 100%;
+	
 	min-height: 100vh;
 	clear: both;
 	display: flex;

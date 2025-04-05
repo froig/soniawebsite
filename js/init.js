@@ -513,7 +513,7 @@ function tokyo_tm_contact_form() {
         const name = jQuery(".contact_form #name").val().trim();
         const email = jQuery(".contact_form #email").val().trim();
         const message = jQuery(".contact_form #message").val().trim();
-        const subject = jQuery(".contact_form #subject").val().trim();
+        // const subject = jQuery(".contact_form #subject").val().trim();
         const successMessage = jQuery(".contact_form .returnmessage").data("success");
 
         jQuery(".contact_form .returnmessage").empty(); // Clear previous messages
@@ -546,7 +546,7 @@ function tokyo_tm_contact_form() {
                     ajax_name: name,
                     ajax_email: email,
                     ajax_message: message,
-                    ajax_subject: subject, // Pass subject to the server
+                    // ajax_subject: subject, // Pass subject to the server
                 }
             )
             .done(function (data) {
@@ -579,7 +579,7 @@ function tokyo_tm_contact_form() {
                     .slideUp(500);
             });
 
-        return false; // Prevent default behavior
+        return true; // Prevent default behavior
     });
 }
 

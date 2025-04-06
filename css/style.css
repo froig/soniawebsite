@@ -331,13 +331,13 @@ a{
 /*---------------------------------------------------*/
 
 .tokyo_tm_all_wrap .leftpart{
-	width: 150px;
+	width: 200px;
 	height: 100vh;
 	position: fixed;
 	display: flex;
 	align-items: center;
 	z-index: 12;
-	padding: 0px 100px;
+	padding: 0px 0px 0px 70px;
 	background-color: #fff;
 }
 .tokyo_tm_all_wrap .leftpart_inner{
@@ -476,7 +476,6 @@ a{
 
 .tokyo_tm_home{
 	width: 100%;
-	
 	min-height: 100vh;
 	clear: both;
 	display: flex;
@@ -486,6 +485,7 @@ a{
 	background-color: #fff6ff;
 	/* background-color: #fae4fb; */
 }
+
 .tokyo_tm_home .home_content{
 	display: flex;
 	align-items: center;
@@ -534,6 +534,11 @@ a{
 .tokyo_tm_home .details{
 	margin-left: 80px;
 }
+
+.tokyo_tm_home .subtitleWork {
+	text-align: center;
+}
+
 .tokyo_tm_home .details .name{
 	font-size: 55px;
 	font-weight: 800;
@@ -549,6 +554,14 @@ a{
 	margin-bottom: 25px;
  	color: #787878;
 }
+
+.tokyo_tm_home .details .subtitleWork h5 {
+	color: #ea8f9c;
+	font-weight: 800;
+	padding-bottom: 30px;
+	/* font-family: "Montserrat"; */
+}
+
 .tokyo_tm_home .social{
 	width: 100%;
 	float: left;
@@ -1058,7 +1071,6 @@ a{
 
 .tokyo_tm_services{
 	width: 100%;
-	height: 100%;
 	clear: both;
     float: left;
 	padding: 100px 100px 100px 100px;
@@ -1982,8 +1994,14 @@ body.modal{
 	height: 100vh;
 	clear: both;
 	float: left;
-	padding: 100px 100px 100px 100px;
+	padding: 100px 100px 0px 100px;
 	background-color: #fff6ff;
+}
+
+.tokyo_tm_contact h1 {
+	color: #ea8f9c;
+	font-weight: 800;
+	font-family: "Montserrat";
 }
 
 .tokyo_tm_contact .contact_text {

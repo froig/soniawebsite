@@ -507,7 +507,7 @@ function tokyo_tm_data_images(){
 function tokyo_tm_contact_form() {
     "use strict";
 
-    jQuery(".contact_form #send_message").on("click", function (e) {
+    jQuery(".contact_form").on("submit", function (e) {
         e.preventDefault(); // Prevent form's default submission behavior
 
         const name = jQuery(".contact_form #name").val().trim();

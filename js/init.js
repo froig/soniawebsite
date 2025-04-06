@@ -554,13 +554,13 @@ function tokyo_tm_contact_form() {
 		   )
 		   .done(function (data) {
 			   // Handle successful submission
-			   window.location.hash = 'thank-you';
+			   window.location.href = 'thank-you';
 
 			   // Optionally, you might still want to trigger any visual updates
 			   // that happen when the menu link is clicked (e.g., active state).
 			   // If your navigation adds an "active" class to the clicked link,
 			   // you might need to add that class manually to your "Thanks" link here.
-			   jQuery('a[href="#thank-you"]').addClass('active'); // Example
+			//    jQuery('a[href="#thank-you"]').addClass('active'); // Example
 
 		   })
 		   .fail(function () {

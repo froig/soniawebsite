@@ -508,7 +508,7 @@ function tokyo_tm_contact_form() {
     "use strict";
 
     jQuery(".contact_form").on("submit", function (e) {
-        e.preventDefault(); // Prevent form's default submission behavior
+        // e.preventDefault(); // Prevent form's default submission behavior
 
         const name = jQuery(".contact_form #name").val().trim();
         const email = jQuery(".contact_form #email").val().trim();
@@ -583,7 +583,7 @@ function tokyo_tm_contact_form() {
         //             .slideUp(500);
         //     });
 
-        return true; // Prevent default behavior
+        // return false; // Prevent default behavior
     });
 }
 

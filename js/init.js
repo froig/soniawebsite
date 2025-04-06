@@ -538,46 +538,50 @@ function tokyo_tm_contact_form() {
             return false;
         }
 
-        // Make AJAX POST request
-        jQuery
-            .post(
-                "modal/contact.php", // Adjust the path if needed
-                {
-                    ajax_name: name,
-                    ajax_email: email,
-                    ajax_message: message,
-                    // ajax_subject: subject, // Pass subject to the server
-                }
-            )
-            .done(function (data) {
-                // Append server response to the return message container
-                jQuery(".contact_form .returnmessage").append(data);
 
-                // Handle server response
-                if (jQuery(".contact_form .returnmessage span.contact_error").length) {
-                    jQuery(".contact_form .returnmessage")
-                        .slideDown(500)
-                        .delay(2000)
-                        .slideUp(500);
-                } else {
-                    jQuery(".contact_form .returnmessage").append(
-                        `<span class='contact_success'>${successMessage}</span>`
-                    );
-                    jQuery(".contact_form .returnmessage")
-                        .slideDown(500)
-                        .delay(4000)
-                        .slideUp(500);
-                    jQuery(".contact_form")[0].reset(); // Reset form fields on success
-                }
-            })
-            .fail(function () {
-                // Handle AJAX failure
-                jQuery(".contact_form .returnmessage")
-                    .append("<span class='contact_error'>Failed to send the message. Please try again later.</span>")
-                    .slideDown(500)
-                    .delay(4000)
-                    .slideUp(500);
-            });
+    // If you reach here with default submission enabled, the form will submit directly
+    // to formsubmit.co.
+
+        // Make AJAX POST request
+        // jQuery
+        //     .post(
+        //         "modal/contact.php", // Adjust the path if needed
+        //         {
+        //             ajax_name: name,
+        //             ajax_email: email,
+        //             ajax_message: message,
+        //             // ajax_subject: subject, // Pass subject to the server
+        //         }
+        //     )
+        //     .done(function (data) {
+        //         // Append server response to the return message container
+        //         jQuery(".contact_form .returnmessage").append(data);
+
+        //         // Handle server response
+        //         if (jQuery(".contact_form .returnmessage span.contact_error").length) {
+        //             jQuery(".contact_form .returnmessage")
+        //                 .slideDown(500)
+        //                 .delay(2000)
+        //                 .slideUp(500);
+        //         } else {
+        //             jQuery(".contact_form .returnmessage").append(
+        //                 `<span class='contact_success'>${successMessage}</span>`
+        //             );
+        //             jQuery(".contact_form .returnmessage")
+        //                 .slideDown(500)
+        //                 .delay(4000)
+        //                 .slideUp(500);
+        //             jQuery(".contact_form")[0].reset(); // Reset form fields on success
+        //         }
+        //     })
+        //     .fail(function () {
+        //         // Handle AJAX failure
+        //         jQuery(".contact_form .returnmessage")
+        //             .append("<span class='contact_error'>Failed to send the message. Please try again later.</span>")
+        //             .slideDown(500)
+        //             .delay(4000)
+        //             .slideUp(500);
+        //     });
 
         return true; // Prevent default behavior
     });

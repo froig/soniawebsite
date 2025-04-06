@@ -542,6 +542,36 @@ function tokyo_tm_contact_form() {
     // If you reach here with default submission enabled, the form will submit directly
     // to formsubmit.co.
 
+	       // Make AJAX POST request to formsubmit.co
+		   jQuery
+		   .post(
+			   "https://formsubmit.co/info@soniamirzaei.com",
+			   {
+				   name: name,
+				   email: email,
+				   message: message
+			   }
+		   )
+		   .done(function (data) {
+			   // Handle successful submission
+			   window.location.hash = 'thank-you';
+
+			   // Optionally, you might still want to trigger any visual updates
+			   // that happen when the menu link is clicked (e.g., active state).
+			   // If your navigation adds an "active" class to the clicked link,
+			   // you might need to add that class manually to your "Thanks" link here.
+			   jQuery('a[href="#thank-you"]').addClass('active'); // Example
+
+		   })
+		   .fail(function () {
+			   // Handle AJAX failure
+			   jQuery(".contact_form .returnmessage")
+				   .append("<span class='contact_error'>Failed to send the message. Please try again later.</span>")
+				   .slideDown(500)
+				   .delay(4000)
+				   .slideUp(500);
+		   });
+
         // Make AJAX POST request
         // jQuery
         //     .post(

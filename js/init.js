@@ -554,7 +554,7 @@ function tokyo_tm_contact_form() {
 		   )
 		   .done(function (data) {
 			   // Handle successful submission
-			   window.location.href = 'thank-you';
+			   window.location.href = '#thank-you';
 
 			   // Optionally, you might still want to trigger any visual updates
 			   // that happen when the menu link is clicked (e.g., active state).

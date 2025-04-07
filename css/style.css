@@ -681,7 +681,7 @@ a{
 	height: auto;
 	clear: both;
 	float: left;
-	border-bottom: 1px solid #DFDFDF;
+	/* border-bottom: 1px solid #DFDFDF; */
 	padding: 30px 30px 30px 30px;
 	margin-bottom: 30px;
 	text-align: justify;
@@ -691,8 +691,6 @@ a{
 	/* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 	font-size: medium;
 	/* background-color: rgba(200, 200, 200,  0.2); */
-
-
 }
 .tokyo_tm_about .about_text p{
    	margin-bottom: 11px;
@@ -1112,6 +1110,29 @@ a{
     float: left;
 }
 
+.tokyo_tm_services .services_text{
+	width: 100%;
+ height: auto;
+ clear: both;
+ float: left;
+ /* border-bottom: 1px solid #DFDFDF; */
+ padding: 30px 30px 30px 30px;
+ margin-bottom: 30px;
+ text-align: justify;
+ /* color: black; */
+ /* color: #787878; */
+ /* color: #3e3e3e; */
+ /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+ font-size: medium;
+ /* background-color: rgba(200, 200, 200,  0.2); */
+}
+.tokyo_tm_about .services_text p{
+	margin-bottom: 11px;
+}
+.tokyo_tm_about .services_text p:last-child{
+	margin-bottom: 0px;
+}
+
 .tokyo_tm_services .list ul{
 	margin: 0px 0px 0px -40px;
 	list-style-type: none;
@@ -1122,13 +1143,11 @@ a{
 .tokyo_tm_services .list ul li{
 	margin: 0px 0px 40px 0px;
 	width: 33.3333%;
-	/* width: 50%; */
 	padding-left: 40px;
 }
 
 .tokyo_tm_services .list ul li .list_inner{
 	width: 100%;
-	/* min-width: 220px; */
     height: 100%;
     clear: both;
     float: left;
@@ -1212,7 +1231,7 @@ a{
 	height: auto;
 	clear: both;
 	float: left;
-	margin-bottom: 62px;
+	/* margin-bottom: 62px; */
 }
 .tokyo_tm_title h3{
 	font-weight: 800;
@@ -2013,6 +2032,7 @@ body.modal{
 
 .tokyo_tm_contact{
 	width: 100%;
+	min-width: 500px;
 	height: 100vh;
 	clear: both;
 	float: left;
@@ -2028,7 +2048,15 @@ body.modal{
 
 .tokyo_tm_contact .contact_text {
 	/* background-color: rgba(255, 255, 255,  0.7); */
-	padding-top: 30px;
+	padding: 30px 30px 30px 30px;
+	text-align: justify;
+}
+
+.tokyo_tm_contact .about_text p{
+	margin-bottom: 11px;
+}
+.tokyo_tm_contact .about_text p:last-child{
+	margin-bottom: 0px;
 }
 
 .tokyo_tm_contact .map_wrap{
@@ -2043,7 +2071,7 @@ body.modal{
 	height: auto;
 	clear: both;
 	float: left;
-	margin-top: -20px;
+	/* margin-top: -20px; */
 }
 .tokyo_tm_contact .fields .first{
 	width: 100%;

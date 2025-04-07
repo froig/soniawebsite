@@ -50,41 +50,63 @@ function tokyo_tm_modalbox(){
 // -------------   PAGE TRANSITION    ------------------
 // -----------------------------------------------------
 
-function tokyo_tm_page_transition(){
-	
-	"use strict";
-	
-	var section 		= jQuery('.tokyo_tm_section');
-	var allLi 			= jQuery('.transition_link li');
-	var button			= jQuery('.transition_link a');
-	var wrapper 		= jQuery('.tokyo_tm_all_wrap');
-	var enter	 		= wrapper.data('enter');
-	var exit		 	= wrapper.data('exit');
-	
-	button.on('click',function(){
-		var element 	= jQuery(this);
-		var href		= element.attr('href');
-		if(element.parent().hasClass('tokyo_tm_button')){
-			jQuery('.menu .transition_link a[href="'+href+'"]').trigger('click');
-			hashtag();
-			return false;
-		}
-		var sectionID 	= jQuery(href);
-		var parent	 	= element.closest('li');
-			if(!parent.hasClass('active')) {
-				allLi.removeClass('active');
-				wrapper.find(section).removeClass('animated '+enter);
-				if(wrapper.hasClass('opened')) {
-					wrapper.find(section).addClass('animated '+exit);
-				}
-				parent.addClass('active');
-				wrapper.addClass('opened');
-				wrapper.find(sectionID).removeClass('animated '+exit).addClass('animated '+enter);
-				jQuery(section).addClass('hidden');
-				jQuery(sectionID).removeClass('hidden').addClass('active');
-			}
-		return false;
-	});
+function tokyo_tm_page_transition(targetHref) {
+
+    "use strict";
+
+    var section         = jQuery('.tokyo_tm_section');
+    var allLi           = jQuery('.transition_link li');
+    var button          = jQuery('.transition_link a'); // Re-select the buttons
+    var wrapper         = jQuery('.tokyo_tm_all_wrap');
+    var enter           = wrapper.data('enter');
+    var exit            = wrapper.data('exit');
+
+    // Function to handle the transition logic
+    function performTransition(href) {
+        var sectionID   = jQuery(href);
+        var parent      = jQuery('.transition_link a[href="' + href + '"]').closest('li');
+
+        if(!parent.hasClass('active')) {
+            allLi.removeClass('active');
+            wrapper.find(section).removeClass('animated '+enter);
+            if(wrapper.hasClass('opened')) {
+                wrapper.find(section).addClass('animated '+exit);
+            }
+            parent.addClass('active');
+            wrapper.addClass('opened');
+            wrapper.find(sectionID).removeClass('animated '+exit).addClass('animated '+enter);
+            jQuery(section).addClass('hidden');
+            jQuery(sectionID).removeClass('hidden').addClass('active');
+        }
+    }
+
+    // Handle programmatic calls with targetHref
+    if (targetHref) {
+        var targetLink = jQuery('.transition_link a[href="' + targetHref + '"]');
+        if (targetLink.length) {
+            var href = targetLink.attr('href');
+            if (targetLink.parent().hasClass('tokyo_tm_button')){
+                jQuery('.menu .transition_link a[href="'+href+'"]').trigger('click');
+                // hashtag(); // You might need to handle hashtag updates separately if needed
+                return false;
+            }
+            performTransition(href);
+        }
+        return false; // Prevent further execution in programmatic call
+    }
+
+    // Re-attach the click listener for manual menu clicks
+    button.on('click',function(){
+        var element     = jQuery(this);
+        var href        = element.attr('href');
+        if(element.parent().hasClass('tokyo_tm_button')){
+            jQuery('.menu .transition_link a[href="'+href+'"]').trigger('click');
+            // hashtag(); // You might need to handle hashtag updates separately if needed
+            return false;
+        }
+        performTransition(href);
+        return false;
+    });
 }
 
 // -----------------------------------------------------
@@ -553,14 +575,8 @@ function tokyo_tm_contact_form() {
 			   }
 		   )
 		   .done(function (data) {
-			   // Handle successful submission
-			   window.location.href = '#thank-you';
-
-			   // Optionally, you might still want to trigger any visual updates
-			   // that happen when the menu link is clicked (e.g., active state).
-			   // If your navigation adds an "active" class to the clicked link,
-			   // you might need to add that class manually to your "Thanks" link here.
-			//    jQuery('a[href="#thank-you"]').addClass('active'); // Example
+                // Call the page transition function with the target href
+                tokyo_tm_page_transition('#thank-you');
 
 		   })
 		   .fail(function () {

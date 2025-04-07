@@ -582,7 +582,9 @@ function tokyo_tm_contact_form() {
                 // jQuery(".contact_form")[0].reset();
 
                 // Call your page transition function
-                tokyo_tm_page_transition('#thank-you');
+                jQuery(".contact_form")[0].reset(); // Reset form fields on success
+				tokyo_tm_page_transition('#thank-you');
+
             })
 			.fail(function () {
 				// Handle AJAX failure

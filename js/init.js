@@ -530,15 +530,17 @@ function tokyo_tm_contact_form() {
     "use strict";
 
     jQuery(".contact_form").on("submit", function (e) {
-        // e.preventDefault(); // Prevent form's default submission behavior
+        e.preventDefault(); // Prevent the default form submission
+
+        const form = jQuery(this); // Get the form element
+        const formData = form.serialize(); // Serialize the form data
 
         const name = jQuery(".contact_form #name").val().trim();
         const email = jQuery(".contact_form #email").val().trim();
         const message = jQuery(".contact_form #message").val().trim();
-        // const subject = jQuery(".contact_form #subject").val().trim();
         const successMessage = jQuery(".contact_form .returnmessage").data("success");
 
-        jQuery(".contact_form .returnmessage").empty(); // Clear previous messages
+        jQuery(".contact_form .returnmessage").empty();
 
         // Validate form fields
         if (!name || !email || !message) {
@@ -565,71 +567,34 @@ function tokyo_tm_contact_form() {
     // to formsubmit.co.
 
 	       // Make AJAX POST request to formsubmit.co
-		   jQuery
-		   .post(
-			   "https://formsubmit.co/info@soniamirzaei.com",
-			   {
-				   name: name,
-				   email: email,
-				   message: message
-			   }
-		   )
-		   .done(function (data) {
-                // Call the page transition function with the target href
+     jQuery
+            .post(
+                "https://formsubmit.co/info@soniamirzaei.com",
+                formData // Send the serialized form data
+            )
+            .done(function (data) {
+                jQuery(".contact_form .returnmessage").append(
+                    `<span class='contact_success'>${successMessage}</span>`
+                );
+                jQuery(".contact_form .returnmessage")
+                    .slideDown(500)
+                    .delay(4000)
+                    .slideUp(500);
+                jQuery(".contact_form")[0].reset();
+
+                // Call your page transition function
                 tokyo_tm_page_transition('#thank-you');
+            })
+			.fail(function () {
+				// Handle AJAX failure
+				jQuery(".contact_form .returnmessage")
+					.append("<span class='contact_error'>Failed to send the message. Please try again later.</span>")
+					.slideDown(500)
+					.delay(4000)
+					.slideUp(500);
+			});
 
-		   })
-		   .fail(function () {
-			   // Handle AJAX failure
-			   jQuery(".contact_form .returnmessage")
-				   .append("<span class='contact_error'>Failed to send the message. Please try again later.</span>")
-				   .slideDown(500)
-				   .delay(4000)
-				   .slideUp(500);
-		   });
-
-        // Make AJAX POST request
-        // jQuery
-        //     .post(
-        //         "modal/contact.php", // Adjust the path if needed
-        //         {
-        //             ajax_name: name,
-        //             ajax_email: email,
-        //             ajax_message: message,
-        //             // ajax_subject: subject, // Pass subject to the server
-        //         }
-        //     )
-        //     .done(function (data) {
-        //         // Append server response to the return message container
-        //         jQuery(".contact_form .returnmessage").append(data);
-
-        //         // Handle server response
-        //         if (jQuery(".contact_form .returnmessage span.contact_error").length) {
-        //             jQuery(".contact_form .returnmessage")
-        //                 .slideDown(500)
-        //                 .delay(2000)
-        //                 .slideUp(500);
-        //         } else {
-        //             jQuery(".contact_form .returnmessage").append(
-        //                 `<span class='contact_success'>${successMessage}</span>`
-        //             );
-        //             jQuery(".contact_form .returnmessage")
-        //                 .slideDown(500)
-        //                 .delay(4000)
-        //                 .slideUp(500);
-        //             jQuery(".contact_form")[0].reset(); // Reset form fields on success
-        //         }
-        //     })
-        //     .fail(function () {
-        //         // Handle AJAX failure
-        //         jQuery(".contact_form .returnmessage")
-        //             .append("<span class='contact_error'>Failed to send the message. Please try again later.</span>")
-        //             .slideDown(500)
-        //             .delay(4000)
-        //             .slideUp(500);
-        //     });
-
-        // return false; // Prevent default behavior
+        return false; // Ensure the default form submission is prevented
     });
 }
 

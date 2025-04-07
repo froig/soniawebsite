@@ -53,7 +53,6 @@ function tokyo_tm_modalbox(){
 function tokyo_tm_page_transition(targetHref) {
 
     "use strict";
-
     var section         = jQuery('.tokyo_tm_section');
     var allLi           = jQuery('.transition_link li');
     var button          = jQuery('.transition_link a'); // Re-select the buttons
@@ -573,14 +572,14 @@ function tokyo_tm_contact_form() {
                 formData // Send the serialized form data
             )
             .done(function (data) {
-                jQuery(".contact_form .returnmessage").append(
-                    `<span class='contact_success'>${successMessage}</span>`
-                );
-                jQuery(".contact_form .returnmessage")
-                    .slideDown(500)
-                    .delay(4000)
-                    .slideUp(500);
-                jQuery(".contact_form")[0].reset();
+                // jQuery(".contact_form .returnmessage").append(
+                //     `<span class='contact_success'>${successMessage}</span>`
+                // );
+                // jQuery(".contact_form .returnmessage")
+                //     .slideDown(500)
+                //     .delay(4000)
+                //     .slideUp(500);
+                // jQuery(".contact_form")[0].reset();
 
                 // Call your page transition function
                 tokyo_tm_page_transition('#thank-you');

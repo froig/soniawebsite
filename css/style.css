@@ -28,6 +28,11 @@ html {
 	padding: 0px;
 	margin: 0px
 }
+
+.hide{
+	display:none;  
+  }
+
 body{
 	font-family: "Mulish";
 	font-size: 15px;

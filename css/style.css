@@ -682,9 +682,9 @@ a{
 	clear: both;
 	float: left;
 	/* border-bottom: 1px solid #DFDFDF; */
-	padding: 30px 30px 30px 30px;
-	margin-bottom: 30px;
-	text-align: justify;
+	/* padding: 30px 30px 30px 30px; */
+	margin-top: 30px;
+	text-align: left;
 	/* color: black; */
 	/* color: #787878; */
 	/* color: #3e3e3e; */
@@ -1118,7 +1118,7 @@ a{
  /* border-bottom: 1px solid #DFDFDF; */
  padding: 30px 30px 30px 30px;
  margin-bottom: 30px;
- text-align: justify;
+ text-align: left;
  /* color: black; */
  /* color: #787878; */
  /* color: #3e3e3e; */
@@ -2221,6 +2221,7 @@ body.modal{
 	.tokyo_tm_home .home_content{flex-direction: column;text-align: center;}
 	.tokyo_tm_home .avatar{margin-bottom: 30px;}
 	.tokyo_tm_home .details{margin-left: 0px;}
+	.tokyo_tm_about {min-width: 450px; padding: 100px 20px 0px 20px;}
 	.tokyo_tm_title .title_flex{flex-direction: column;align-items: flex-start;}
 	.tokyo_tm_title .portfolio_filter{padding-top: 48px;}
 	.container{padding: 0px 0px;}
@@ -2235,6 +2236,8 @@ body.modal{
 	.tokyo_tm_home .avatar{min-width: 200px;min-height: 200px;}
 	.tokyo_tm_portfolio .portfolio_list{margin: 0px;}
 	.tokyo_tm_portfolio .portfolio_list li{width: 100%;padding-left: 0px;}
+	.tokyo_tm_about {min-width: 450px; padding: 100px 20px 0px 20px;}
+	.tokyo_tm_about .about_text {padding: 0px}
 	.tokyo_tm_news ul{margin: 0px;}
 	.tokyo_tm_news ul li{width: 100%;padding-left: 0px;}
 	.tokyo_tm_news ul li .details{padding-left: 30px;padding-right: 30px;}
@@ -2256,6 +2259,8 @@ body.modal{
 	.tokyo_tm_resumebox .in{flex-direction: column;}
 	.tokyo_tm_resumebox .in .left{width: 100%;padding-right: 0px;margin-bottom: 60px;}
 	.tokyo_tm_resumebox .in .right{width: 100%;padding-left: 0px;}
+	.tokyo_tm_services {min-width: 450px; padding: 100px 20px 0px 20px;}
+	.tokyo_tm_services .services_text {padding: 0px}
 	.tokyo_tm_services .list ul{margin: 0px;}
 	.tokyo_tm_services .list ul li{width: 100%;padding-left: 0px;}
 	.tokyo_tm_partners ul li{width: 50%;}

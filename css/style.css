@@ -2236,7 +2236,7 @@ body.modal{
 	.tokyo_tm_home .avatar{min-width: 200px;min-height: 200px;}
 	.tokyo_tm_portfolio .portfolio_list{margin: 0px;}
 	.tokyo_tm_portfolio .portfolio_list li{width: 100%;padding-left: 0px;}
-	.tokyo_tm_about {min-width: 90%; padding: 100px 20px 0px 20px; height: 100%;}
+	.tokyo_tm_about {min-width: 90%; padding: 100px 20px 100px 20px; height: 100%;}
 	.tokyo_tm_about .about_text {padding: 0px}
 	.tokyo_tm_news ul{margin: 0px;}
 	.tokyo_tm_news ul li{width: 100%;padding-left: 0px;}
@@ -2259,7 +2259,7 @@ body.modal{
 	.tokyo_tm_resumebox .in{flex-direction: column;}
 	.tokyo_tm_resumebox .in .left{width: 100%;padding-right: 0px;margin-bottom: 60px;}
 	.tokyo_tm_resumebox .in .right{width: 100%;padding-left: 0px;}
-	.tokyo_tm_services {min-width: 90%; padding: 100px 20px 0px 20px;}
+	.tokyo_tm_services {min-width: 90%; padding: 100px 20px 100px 20px;}
 	.tokyo_tm_services .services_text {padding: 0px}
 	/* .tokyo_tm_services .description_wrap {min-width: 90%;} */
 	.tokyo_tm_services .list ul{margin: 0px;}
@@ -2272,5 +2272,5 @@ body.modal{
 	.tokyo_tm_modalbox .description_wrap:after{height: 20px;}
 	.tokyo_tm_modalbox .description_wrap:before{height: 20px;}
 	.tokyo_tm_modalbox .portfolio_main_title{margin-bottom: 20px;}
-	.tokyo_tm_contact { min-width: 90%; padding: 100px 20px 0px 20px; height: 100%}
+	.tokyo_tm_contact { min-width: 90%; padding: 100px 20px 100px 20px; height: 100%}
 }

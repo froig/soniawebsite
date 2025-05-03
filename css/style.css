@@ -2243,7 +2243,7 @@ body.modal{
 	.tokyo_tm_home .avatar{min-width: 200px;min-height: 200px;}
 	.tokyo_tm_portfolio .portfolio_list{margin: 0px;}
 	.tokyo_tm_portfolio .portfolio_list li{width: 100%;padding-left: 0px;}
-	.tokyo_tm_portfolio{height: 100%;}
+	.tokyo_tm_portfolio{height: 100%; padding-bottom: 100px;}
 	.tokyo_tm_about {min-width: 90%; padding: 100px 20px 100px 20px; height: 100%;}
 	.tokyo_tm_about .about_text {padding: 0px}
 	.tokyo_tm_news ul{margin: 0px;}
